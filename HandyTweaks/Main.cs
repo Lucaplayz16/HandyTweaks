@@ -926,7 +926,7 @@ namespace HandyTweaks
             else if (uint.TryParse(clr,NumberStyles.HexNumber,CultureInfo.InvariantCulture,out var n))
                 color = new Color32((byte)(n / 0x10000 & 0xFF), (byte)(n / 0x100 & 0xFF), (byte)(n & 0xFF), 255);
             else
-                return false;
+                return true;
             return true;
         }
         public static string ToHex(this Color32 color) => color.r.ToString("X2") + color.g.ToString("X2") + color.b.ToString("X2");
@@ -2085,8 +2085,8 @@ namespace HandyTweaks
                 }
                 else if (KAUI.GetGlobalMouseOverItem() == e.fireballColorBtn)
                 {
-                    e.fireballColor = null;
-                    e.fireballColorBtn.pBackground.color = ExtendedDragonCustomization.NullColorFallback;
+                    e.fireballColor = RGB;
+                    e.fireballColorBtn.pBackground.color = ExtendedDragonCustomization.RGBColorFallback;
                     flag = true;
                 }
                 if (flag)
