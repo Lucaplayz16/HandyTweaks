@@ -154,7 +154,7 @@ namespace HandyTweaks
             {
                 var b = AssetBundle.LoadFromStream(s);
                 ColorPicker.UIPrefab = b.LoadAsset<GameObject>("ColorPicker");
-                b.Unload(false);
+                b.Unload(true);
             }
             new Harmony("com.aidanamite.HandyTweaks").PatchAll();
             Logger.LogInfo("Loaded");
